@@ -1,0 +1,59 @@
+SELECT distinct groupName from groups where ownerName='tanvir';
+
+SELECT DISTINCT groupName
+FROM groups
+WHERE groupMember =  'tanvir'
+LIMIT 0 , 30
+
+
+SELECT DISTINCT ownerName
+FROM groups
+WHERE groupName =  'TANVIR FAMILY'
+LIMIT 0 , 30
+
+
+SELECT DISTINCT groupMember
+FROM groups
+WHERE groupName =  'TANVIR FAMILY'
+LIMIT 0 , 30
+
+SELECT DISTINCT groupName  
+FROM  groups 
+WHERE groupName like 'TANVIR%' and groupMember<>'mou';
+
+SELECT DISTINCT groupName 
+FROM groups 
+WHERE groupName='TANVI%' and groupMember<>'sabbir'
+
+
+SELECT DISTINCT groupName  
+FROM  groups 
+WHERE groupName like 'TANVIR%' and groupName not in (
+													SELECT DISTINCT groupName  
+													FROM  groups 
+													WHERE groupMember='mou')
+													
+
+
+SELECT DISTINCT friend
+FROM friends
+WHERE friend LIKE  'tanv%'
+LIMIT 0 , 30
+
+
+
+SELECT DISTINCT friend
+FROM friends
+WHERE me LIKE  'tanv%'
+LIMIT 0 , 30
+
+
+SELECT * 
+FROM  `messages` 
+WHERE  'group' =  'TANVIRFAMILY'
+LIMIT 0 , 30
+
+
+SELECT * FROM messages WHERE groupName = 'TANVIR FAMILY' and toUser = 'tanvir' and isGroupMessage = true
+
+SELECT * FROM messages WHERE groupName = 'TANVIR FAMILY' and toUser = 'irfan' and isGroupMessage = true
